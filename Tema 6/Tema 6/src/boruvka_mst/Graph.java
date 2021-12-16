@@ -67,37 +67,23 @@ public class Graph {
     }
 
     public boolean isConnected() {
-        // array to store if vertices where visited
         boolean visited[] = new boolean[vCount];
-
-        // initialze all to non-visited
         int i;
         for (i = 0; i < vCount; i++) {
             visited[i] = false;
         }
-
-        // check for vertex with non-zero degree
         for (i = 0; i < vCount; i++) {
             if (neighbours(i).size() == 0)
-                return false; // if there is one return false
+                return false;
         }
-
-        // DFS Traversal starting from non-zero vertex
         DFS(0, visited);
-
-        // Check if all vertices have been visited
         for (i = 0; i < vCount; i++)
             if (visited[i] == false)
                 return false;
-        // if at least one was not visited false, else we return true
         return true;
     }
-
     public void DFS(int sourceVertex, boolean visited[]) {
-        // Mark source node as visited
         visited[sourceVertex] = true;
-
-        // recursion for all the vertices adjacent to this one
         Iterator<Edge> it = neighbours(sourceVertex).iterator();
         while (it.hasNext()) {
             Edge nextVertex = it.next();
@@ -107,10 +93,7 @@ public class Graph {
     }
 
     public int CountReachableNodes(int sourceVertex) {
-        // array to store if vertices where visited
         boolean visited[] = new boolean[vCount];
-
-        // initialze all to non-visited
         for (int i = 0; i < vCount; i++) {
             visited[i] = false;
         }
@@ -126,10 +109,7 @@ public class Graph {
     }
 
     public boolean Reachable(int sourceVertex, int destVertex){
-        // array to store if vertices where visited
         boolean visited[] = new boolean[vCount];
-
-        // initialze all to non-visited
         for (int i = 0; i < vCount; i++) {
             visited[i] = false;
         }
@@ -144,7 +124,6 @@ public class Graph {
         for (int i = 0; i < vCount; i++) {
             PriorityQueue<Edge> edges = neighbours(i);
             Iterator<Edge> it = edges.iterator();
-            //System.out.print(i + ": ");
             for (int j = 0; j < edges.size(); j++) {
                 temp+=it.next()+"";
                 boolean ok=true;
@@ -158,11 +137,8 @@ public class Graph {
                     k--;
                 }
                 temp=temp.substring(0,k);
-               //System.out.print(it.next() + " ");
             }
-            //System.out.println();
         }
-
         return temp;
     }
 }

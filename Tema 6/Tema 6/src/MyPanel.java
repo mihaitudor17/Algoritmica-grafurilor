@@ -368,7 +368,7 @@ public class MyPanel extends JPanel {
     }
     private void colorareArc(int i,int l)
     {
-        System.out.println(i+" "+l);
+        //System.out.println(i+" "+l);
         boolean ok = false;
         double x1,y1,x,y;
         //System.out.println(i+" "+l);
@@ -388,7 +388,7 @@ public class MyPanel extends JPanel {
                             if (x * x + y * y < node_diam * node_diam) {
 
                                 listaArce.get(j).setColor(color);
-                                System.out.println(j);
+                                //System.out.println(j);
                                // j = listaNoduri.size();
                             }
                         }
