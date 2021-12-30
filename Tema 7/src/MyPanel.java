@@ -56,7 +56,7 @@ public class MyPanel extends JPanel {
                 doc.getDocumentElement().normalize();
                 NodeList list = doc.getElementsByTagName("node");
                 size=list.getLength();
-                for (int temp = 0; temp < list.getLength(); temp++) {
+                for (int temp = 0; temp < size; temp++) {
                     Node node = list.item(temp);
                     if (node.getNodeType() == Node.ELEMENT_NODE) {
                         Element element = (Element) node;
@@ -80,7 +80,8 @@ public class MyPanel extends JPanel {
                 {
                     matrice.add(new ArrayList<>());
                 }
-                for (int temp = 0; temp < list.getLength(); temp++) {
+ 		int size1=list.getLength();
+                for (int temp = 0; temp < size1; temp++) {
                     listaNoduri.setSize(size);
                     Node node = list.item(temp);
                     if (node.getNodeType() == Node.ELEMENT_NODE) {
