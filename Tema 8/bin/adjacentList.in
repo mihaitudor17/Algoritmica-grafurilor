@@ -1,0 +1,14 @@
+4
+2   2 2   3 4
+2   3 3   4 1
+1   4 5
+0
+
+1 4
+
+-------------Explanation
+line 1: number of nodes
+line 2+:	-line 2 will hold the values for the node 0, line 2 for node 1, ...
+			-first value is the number of arcs that come out of that respective node
+			-after that it is the idexes of the nodes (I will subtract 1 from these values in code) and the capacity
+last line: start node followed by end node (I will subtract 1 from these values in code)

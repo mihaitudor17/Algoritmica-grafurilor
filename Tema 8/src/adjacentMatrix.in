@@ -1,0 +1,11 @@
+4
+0 2 4 0
+0 0 3 1
+0 0 0 5
+0 0 0 0
+
+1 4
+
+------------------Explaination
+first line: number of nodes
+last line: start node followed by end node (I will subtract 1 from these values in code)
