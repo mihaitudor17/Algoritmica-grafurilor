@@ -25,7 +25,7 @@ public class Graph {
 	boolean calculatedMaxFlow = false;
 	int startIndex, endIndex;
 	
-	int nodeDiameter = 30;
+	int nodeDiameter = 50;
 	static int window_width;
 	static int window_height;
 	
@@ -227,6 +227,7 @@ public class Graph {
 				
 			nodeList.get(index).DrawNode(graphicsComponent, nodeDiameter);
 		}
+		int maximum=0;
 		for(int index = 0; index < arcList.size(); index++)
 		{
 			arcList.get(index).DrawArc(graphicsComponent);
@@ -239,7 +240,7 @@ public class Graph {
 				{
 					graphicsComponent.drawString("" + 
 						f[arcList.get(index).startNodeIndex][arcList.get(index).endNodeIndex] + 
-						", " + adjacentMatrix[arcList.get(index).startNodeIndex][arcList.get(index).endNodeIndex]
+						" / " + adjacentMatrix[arcList.get(index).startNodeIndex][arcList.get(index).endNodeIndex]
 						, xCoord, yCoord);
 				}
 				else
@@ -256,17 +257,22 @@ public class Graph {
 					}
 					graphicsComponent.drawString("" + 
 						f[arcList.get(index).startNodeIndex][arcList.get(index).endNodeIndex] + 
-						", " + adjacentListCapacity.get(arcList.get(index).startNodeIndex).get(targetIndex)
+						" / " + adjacentListCapacity.get(arcList.get(index).startNodeIndex).get(targetIndex)
 						, xCoord, yCoord);
+					if(f[arcList.get(index).startNodeIndex][arcList.get(index).endNodeIndex]>maximum)
+						maximum=f[arcList.get(index).startNodeIndex][arcList.get(index).endNodeIndex];
+					if(f[arcList.get(index).startNodeIndex][arcList.get(index).endNodeIndex]>0)
+						arcList.get(index).color=1;
 				}
 			}
 		}
-		for(int index = 0; index < circleList.size(); index++)
-		{
-			graphicsComponent.setColor(Color.GRAY);
-	        graphicsComponent.fillOval(circleList.get(index).x, circleList.get(index).y, 
-	        		nodeDiameter/2, nodeDiameter/2);
-		}
+//		for(int index = 0; index < circleList.size(); index++)
+//		{
+//			graphicsComponent.setColor(Color.GRAY);
+//	        graphicsComponent.fillOval(circleList.get(index).x, circleList.get(index).y,
+//	        		nodeDiameter/2, nodeDiameter/2);
+//		}
+		System.out.println("Fluxul maxim este: "+maximum);
 	}
 	
 	public void PrintContainer()
@@ -346,7 +352,6 @@ public class Graph {
 		
 		ConstructRezidualNetwork(rezidualNetwork, r);
 		FindDmf(dmf, rezidualNetwork);
-		
 		int min, first, second;
 		while(dmf.size() != 0)
 		{
@@ -418,8 +423,9 @@ public class Graph {
 	
 	private void FindDmf(Vector<Pair<Integer, Integer>> dmf, Vector<Pair<Integer, Integer>> rezidualNetwork)
 	{
+
 		dmf.clear();
-		
+		//System.out.println(rezidualNetwork);
 		Stack<Integer> traversalStack = new Stack<Integer>();
 		boolean[] visited = new boolean[nodeList.size()];
 		int[] predecessor = new int[nodeList.size()];
@@ -464,6 +470,7 @@ public class Graph {
 			dmf.add(new Pair<Integer, Integer>(predecessor[currentIndex], currentIndex));
 			currentIndex = predecessor[currentIndex];
 		}
+		System.out.println(dmf);
 	}
 	
 	private void ConstructRezidualNetwork(Vector<Pair<Integer, Integer>> rezidualNetwork, int[][] r)
