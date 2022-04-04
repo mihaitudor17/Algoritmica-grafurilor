@@ -419,6 +419,10 @@ public class Graph {
 				}
 			}
 		}
+		for(int i=0;i<f.length;i++)
+		{for(int j=0;j<f[i].length;j++)
+				System.out.print(f[i][j]+" ");
+			System.out.println();}
 	}
 	
 	private void FindDmf(Vector<Pair<Integer, Integer>> dmf, Vector<Pair<Integer, Integer>> rezidualNetwork)

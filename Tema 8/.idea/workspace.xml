@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29535425-fa1f-40c9-a24d-1a040e9edac6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Tema 2/DesenareGraf1/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema 2/DesenareGraf1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tema 2/DesenareGraf1/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/JavaFX.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tema 6 - Fluxuri.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Tema 6 - Fluxuri.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Arc.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Arc.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Graph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Arc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Arc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graph.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
